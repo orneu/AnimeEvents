@@ -1,0 +1,15 @@
+# Obtener lista de otakus asistentes a un evento
+GET http://localhost:3000/api/events/1/otakus
+Accept: application/json
+
+# Obtener lista de eventos a los que asiste un otaku
+GET http://localhost:3000/api/otakus/1/events
+Accept: application/json
+
+# Intentar obtener otakus de un evento inexistente (debe devolver 404)
+GET http://localhost:3000/api/events/99999/otakus
+Accept: application/json
+
+# Intentar obtener eventos de un otaku inexistente (debe devolver 404)
+GET http://localhost:3000/api/otakus/99999/events
+Accept: application/json

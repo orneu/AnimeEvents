@@ -1,0 +1,12 @@
+# Obtener todos los otakus
+GET http://localhost:3000/api/otakus
+Accept: application/json
+
+# Obtener un otaku por ID
+GET http://localhost:3000/api/otakus/3
+Accept: application/json
+
+
+# Obtener un otaku inexistente (debe devolver 404)
+GET http://localhost:3000/api/otakus/34393287
+Accept: application/json

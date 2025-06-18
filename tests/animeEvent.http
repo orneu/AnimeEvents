@@ -1,0 +1,7 @@
+# Obtener todos los eventos
+GET http://localhost:8080/api/events
+Accept: application/json
+
+# Obtener un evento inexistente (debe devolver 404)
+GET http://localhost:8080/api/events/8373873
+Accept: application/json
