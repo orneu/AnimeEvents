@@ -1,5 +1,5 @@
 import otakuRepository from "../repositories/otaku.repository.js";
-
+import mongoose from "mongoose";
 const getOtakus = async (req, res) => {
   try {
     const otakus = await otakuRepository.getAllOtakus();
@@ -11,6 +11,9 @@ const getOtakus = async (req, res) => {
 
 const getOtakuById = async (req, res) => {
   try {
+    if (!req.params.id || !mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ error: "El ID ingresado es invalido" });
+    }
     const otaku = await otakuRepository.getOtakuById(req.params.id);
     res.json(otaku);
   } catch (error) {
