@@ -12,8 +12,12 @@ const getAllEventsFromOtakuId = async (id) =>
     include: [{ model: Otaku, as: "asistentes" }],
   });
 
+
+const createOtaku = async (otakuData) => new Otaku(otakuData).save();
+
 export default {
   getAllOtakus,
   getOtakuById,
   getAllEventsFromOtakuId,
+  createOtaku
 };

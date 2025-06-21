@@ -27,4 +27,13 @@ const getAllEventsFromOtakuId = async (req, res) => {
   }
 };
 
-export { getOtakus, getOtakuById, getAllEventsFromOtakuId };
+const createOtaku = async (req, res) => {
+  try {
+    const newOtaku = await otakuRepository.createOtaku(req.body);
+    res.status(201).json(newOtaku);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export { getOtakus, getOtakuById, getAllEventsFromOtakuId, createOtaku };
